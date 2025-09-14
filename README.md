@@ -1,2 +1,2 @@
 # Pianissist-AI
-A piano that place on its own on the voice it listens
+A piano that plays on its own with the voice it listens
