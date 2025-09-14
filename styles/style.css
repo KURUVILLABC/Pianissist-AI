@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.controls {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#mic-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#mic-btn:hover {
+    background: #f0f0f0;
+}
+
+.piano {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.white-key {
+    width: 60px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 0 1px;
+    transition: background-color 0.1s;
+    display: inline-block;
+    position: relative;
+}
+
+.white-key:active,
+.white-key.active {
+    background-color: #e0e0e0;
+}
+
+.black-key {
+    width: 40px;
+    height: 120px;
+    background-color: black;
+    position: absolute;
+    z-index: 2;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.1s;
+}
+
+.black-key:active,
+.black-key.active {
+    background-color: #333;
+}
+
+.key-label {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #888;
+    font-size: 0.9em;
+    user-select: none;
+}
+
+#status {
+    margin-top: 20px;
+    font-weight: bold;
+}
