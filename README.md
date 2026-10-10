@@ -2,18 +2,6 @@
 
 A browser-based piano and live pitch visualizer. It analyzes microphone input locally with the Web Audio API and highlights estimated notes on a playable C2–B5 keyboard. No API key, paid service, audio upload, or recording is used.
 
-## Run
-
-Microphone access requires a secure browser context: use `https://` or serve this folder from `http://localhost`. Opening `index.html` directly from disk may prevent microphone access.
-
-For example, from the project folder:
-
-```sh
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` and allow microphone access when prompted.
-
 ## Use
 
 1. Select **Start listening** and allow microphone access.
