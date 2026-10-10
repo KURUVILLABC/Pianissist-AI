@@ -1,15 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Piano App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10131d">
+    <title>Pianissist — Live Note Detector</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="controls">
-        <button id="mic-btn">🎤 Start Listening</button>
-    </div>
-    <div class="piano"></div>
+    <main class="app">
+        <header class="topbar">
+            <a class="brand" href="./" aria-label="Pianissist home">
+                <span class="brand-mark" aria-hidden="true">P</span>
+                <span>pianissist<span class="brand-dot">.</span></span>
+            </a>
+            <span class="live-label"><span class="live-dot"></span> LIVE AUDIO TOOL</span>
+        </header>
+
+        <section class="hero" aria-labelledby="page-title">
+            <p class="eyebrow">LISTEN. SEE. PLAY.</p>
+            <h1 id="page-title">Turn sound into <span>notes.</span></h1>
+            <p class="intro">Listen through your microphone and see the detected pitches light up on the piano in real time.</p>
+
+            <div class="control-panel">
+                <button id="mic-btn" class="listen-button" type="button">
+                    <span class="mic-icon" aria-hidden="true">●</span>
+                    <span id="mic-label">Start listening</span>
+                </button>
+                <label class="monitor-control">
+                    <input id="monitor-toggle" type="checkbox">
+                    <span class="toggle" aria-hidden="true"></span>
+                    <span>Play detected notes</span>
+                </label>
+                <span id="status" class="status" role="status" aria-live="polite">
+                    <span class="status-indicator"></span>
+                    <span id="status-text">Ready when you are</span>
+                </span>
+            </div>
+            <p class="privacy-note">Audio is analyzed in your browser and is not uploaded or recorded.</p>
+        </section>
+
+        <section class="detector" aria-label="Detected notes">
+            <div class="detector-heading">
+                <div>
+                    <p class="eyebrow">PITCH DETECTOR</p>
+                    <h2 id="detected-notes">—</h2>
+                </div>
+                <div class="readout">
+                    <span class="readout-label">INPUT LEVEL</span>
+                    <div class="level-track" aria-label="Microphone input level">
+                        <span id="level-bar"></span>
+                    </div>
+                </div>
+            </div>
+            <p id="detector-hint" class="detector-hint">Start listening to see detected notes here.</p>
+        </section>
+
+        <section id="performance-panel" class="performance-panel" aria-label="Recorded performance" hidden>
+            <div>
+                <p class="eyebrow">YOUR PERFORMANCE</p>
+                <p id="performance-summary" class="performance-summary" aria-live="polite"></p>
+            </div>
+            <button id="replay-btn" class="replay-button" type="button" disabled>
+                <span aria-hidden="true">▶</span>
+                <span id="replay-label">Replay recorded notes</span>
+            </button>
+        </section>
+
+        <section class="keyboard-section" aria-labelledby="keyboard-title">
+            <div class="keyboard-heading">
+                <div>
+                    <p class="eyebrow">ON-SCREEN PIANO</p>
+                    <h2 id="keyboard-title">Follow the notes</h2>
+                </div>
+                <span class="key-hint">Click or tap a key to play</span>
+            </div>
+            <div class="keyboard-scroll" tabindex="0" aria-label="Scrollable piano keyboard">
+                <div class="piano" role="group" aria-label="Piano keys from C2 to B5"></div>
+            </div>
+            <p class="range-note">Four octaves · C2–B5 <span>·</span> Scroll horizontally to explore</p>
+        </section>
+
+        <footer>
+            <span>Built for real-time pitch exploration</span>
+            <span>Best with one clear instrument at a time</span>
+        </footer>
+    </main>
     <script src="scripts/piano.js"></script>
 </body>
 </html>
